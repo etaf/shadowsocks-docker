@@ -20,8 +20,11 @@ sudo service iptables restart
 sudo service docker restart
 sudo docker run -d -p 8838:8838 etaf/shadowsocks
 
+#if you want this container starting on system boot, you should run container in this way:
+sudo docker run --restart=always -d -p 8838:8838 etaf/shadowsocks
+
 # To see the output of docker container:
-docker logs $(docker ps -q)
+docker logs $(docker ps -ql)
 
 # Finished.
 
